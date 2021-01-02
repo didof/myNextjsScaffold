@@ -1,8 +1,6 @@
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 
-import headerShowConfig from '@/appConfigs/header'
-
 import styles, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -22,7 +20,7 @@ function Layout(props: LayoutProps) {
     return (
         <Page>
             <GlobalStyle />
-            <Header show={headerShowConfig} />
+            <Header />
             <main>
                 {props.children}
             </main>

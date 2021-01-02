@@ -1,21 +1,32 @@
-import React from 'react'
+// REACT
+import { useEffect } from 'react'
+
+// COMPONENTS
 import Navbar from './Navbar/Navbar'
-import navbarConfig from '@/appConfigs/navbar'
-import { HeaderShowProps } from '@/appConfigs/header'
+import TopItems from './TopItems/TopItems'
 
-interface HeaderProps {
-    show: HeaderShowProps
-}
 
+// STYLE
+import styles from 'styled-components'
+
+interface HeaderProps {}
 function Header(props: HeaderProps) {
-    return (
-        <header>
-            {props.show.icon ? "icon" : null}
-            header
-            {props.show.nav ? <Navbar config={navbarConfig} /> : null}
 
-        </header>
+    return (
+        <Flexer>
+            <TopItems />
+            <Navbar />
+        </Flexer>
     )
 }
+
+const Flexer = styles.header`
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`
 
 export default Header

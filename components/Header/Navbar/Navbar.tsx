@@ -1,27 +1,47 @@
+// REACT
 import React from 'react'
 
+// REDUX
+import { useSelector } from 'react-redux'
+import { Tab, selectNavbar } from '@/lib/slices/navbarSlice'
+
+// COMPONENTS
 import NavbarItem from './NavbarItem'
 
-import { NavbarItemConfig } from '@/appConfigs/navbar'
-
+// STYLE
 import styles from 'styled-components'
 
-interface NavbarProps {
-    config: NavbarItemConfig[]
+function filterOutDisabledTabs(list: Tab[]): Tab[] {
+    return list.filter(function ({ disabled }) {
+        return !disabled
+    })
 }
 
+function mapTabs(list: Tab[]): JSX.Element[] {
+    return list.map(function ({ label, url }, index) {
+        return (
+            <NavbarItem
+                key={index}
+                label={label}
+                url={url}
+            />
+        )
+    })
+}
+
+interface NavbarProps {}
 function Navbar(props: NavbarProps) {
 
+    const { activeTab, tabList } = useSelector(selectNavbar)
+
     // TODO memoization
+    const filteredTabs = filterOutDisabledTabs(tabList)
+    const tabs = mapTabs(filteredTabs)
 
     return (
         <Nav>
             <List>
-                {props.config.filter(function(item) {
-                    return !item.disabled
-                }).map(function(item, index) {
-                    return <NavbarItem key={index} label={item.label} url={item.url} />
-                })}
+                {tabs}
             </List>
         </Nav>
     )
