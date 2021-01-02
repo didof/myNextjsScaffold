@@ -1,13 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import topItemsConfig from '@/configuration/topItems.json'
+
 const topItemsSlice = createSlice({
     name: 'topItems',
-    initialState: {
-        hamburger: true,
-        icon: true,
-        title: true,
-        settings: true,
-    },
+    initialState: topItemsConfig,
     reducers: {
         toggle: (state, action) => {
             state[action.payload.which] = !state[action.payload.which]
