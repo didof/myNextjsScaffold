@@ -9,8 +9,7 @@ import { toggle } from '@/lib/slices/sideDrawSlice'
 import TopItemContract from './TopItemContract'
 
 // STYLE
-import { Button } from '@/styles/Button'
-
+import { IButton } from '@/styles/Button'
 
 function Hamburger(props: TopItemContract) {
 
@@ -20,13 +19,11 @@ function Hamburger(props: TopItemContract) {
     }
 
     return (
-        <Button
+        <IButton
             onClick={handleToggleSideDraw}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.8 }}
-        >
-        
-        </Button>
+        />
     )
 }
 

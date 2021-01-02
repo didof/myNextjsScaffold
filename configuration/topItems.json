@@ -1,5 +1,5 @@
 {
-    "hamburger": false,
+    "hamburger": true,
     "icon": false,
     "title": false,
     "settings": true
