@@ -32,7 +32,7 @@ export default class CustomDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    
+                    <meta title="Hello next" />
                 </Head>
                 <body>
                     <Main />

@@ -1,12 +1,13 @@
-import { Fragment } from 'react'
 import Head from 'next/head'
 
-import { Title } from '@/styles/Typography'
+import { H1 } from '@/styles/Typography'
 
-export default function Home() {
+import styles from 'styled-components'
+
+ function Home() {
 
   return (
-    <Fragment>
+    <Wrapper>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
@@ -16,10 +17,18 @@ export default function Home() {
         />
       </Head>
 
-      <Title>Home</Title>
+      <H1>Home</H1>
 
-
-
-    </Fragment>
+    </Wrapper>
   )
 }
+
+const Wrapper = styles.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export default Home
+

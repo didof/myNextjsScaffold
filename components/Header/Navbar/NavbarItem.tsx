@@ -4,6 +4,7 @@ import React from 'react'
 // REDUX
 import { useDispatch } from 'react-redux'
 import { push } from '@/lib/slices/navbarSlice'
+import { ensureIsClose } from '@/lib/slices/sideDrawSlice'
 
 // NEXT
 import { useRouter } from 'next/router'
@@ -12,6 +13,7 @@ import { useRouter } from 'next/router'
 import styles from 'styled-components'
 
 function handleClick(router, dispatch, index: number) {
+    dispatch(ensureIsClose())
     dispatch(push({ newActiveTab: index }))
 }
 

@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
 
-import { Title } from '@/styles/Typography'
+import { H1 } from '@/styles/Typography'
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         />
       </Head>
 
-      <Title>Contact</Title>
+      <H1>Contact</H1>
 
     </Fragment>
   )

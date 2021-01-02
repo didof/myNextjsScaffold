@@ -1,6 +1,9 @@
+// COMPONENTS
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
+import SideDraw from './SideDraw/SideDraw'
 
+// STYLE
 import styles, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -18,18 +21,21 @@ interface LayoutProps {
 
 function Layout(props: LayoutProps) {
     return (
-        <Page>
+        <Screen>
             <GlobalStyle />
             <Header />
-            <main>
-                {props.children}
-            </main>
+            <Page>
+                <SideDraw />
+                <Main>
+                    {props.children}
+                </Main>
+            </Page>
             <Footer />
-        </Page>
+        </Screen>
     )
 }
 
-const Page = styles.div`
+const Screen = styles.div`
     height: 100vh;
     width: 100vw;
 
@@ -37,6 +43,23 @@ const Page = styles.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+`
+
+const Page = styles.div`
+    background-color: purple;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+`
+
+const Main = styles.main`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
 `
 
 export default Layout
