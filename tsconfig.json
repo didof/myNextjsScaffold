@@ -20,10 +20,10 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/appConfigs/*": ["appConfigs/*"],
       "@/lib/*": ["lib/*"],
       "@/HOC/*": ["HOC/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/configuration/*": ["configuration/*"]
     }
   },
   "include": [

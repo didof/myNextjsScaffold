@@ -1,0 +1,4 @@
+{
+    "enablePrefetch": true,
+    "prefetchUrls": ["/info", "/contact"]
+}

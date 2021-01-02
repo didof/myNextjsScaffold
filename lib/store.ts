@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import topItemsReducer from '@/lib/slices/topItemsSlice'
+import bootSlice from '@/lib/slices/bootSlice'
+import topItemsSlice from '@/lib/slices/topItemsSlice'
 import navbarSlice from '@/lib/slices/navbarSlice'
 
 export default configureStore({
     reducer: {
-        topItems: topItemsReducer,
+        boot: bootSlice,
+        topItems: topItemsSlice,
         navbar: navbarSlice
     },
     devTools: true
