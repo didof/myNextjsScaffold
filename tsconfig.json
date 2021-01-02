@@ -23,6 +23,7 @@
       "@/appConfigs/*": ["appConfigs/*"],
       "@/lib/*": ["lib/*"],
       "@/HOC/*": ["HOC/*"],
+      "@/styles/*": ["styles/*"]
     }
   },
   "include": [

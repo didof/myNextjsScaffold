@@ -1,12 +1,7 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
 
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+import { Title } from '@/styles/Typography'
 
 export default function Home() {
   return (
