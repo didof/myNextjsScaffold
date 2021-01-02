@@ -22,6 +22,7 @@
       "@/components/*": ["components/*"],
       "@/appConfigs/*": ["appConfigs/*"],
       "@/lib/*": ["lib/*"],
+      "@/HOC/*": ["HOC/*"],
     }
   },
   "include": [

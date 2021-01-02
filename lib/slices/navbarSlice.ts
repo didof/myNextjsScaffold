@@ -9,11 +9,13 @@ export interface Tab {
 
 export interface NavbarInitialState {
     activeTab: number,
+    activeUrl: string,
     tabList: Tab[]
 }
 
 const initialState: NavbarInitialState = {
     activeTab: 0,
+    activeUrl: '/',
     tabList: [
         {
             label: 'home',
@@ -41,7 +43,10 @@ const navbarSlice = createSlice({
     initialState: initialState,
     reducers: {
         push: (state, action) => {
-            state[action.payload.which] = !state[action.payload.which]
+            let { newActiveTab } = action.payload
+            let newActiveUrl = state.tabList[newActiveTab].url
+            state.activeTab = newActiveTab
+            state.activeUrl = newActiveUrl
         }
     }
 })

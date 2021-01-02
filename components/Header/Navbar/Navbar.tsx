@@ -17,26 +17,27 @@ function filterOutDisabledTabs(list: Tab[]): Tab[] {
     })
 }
 
-function mapTabs(list: Tab[]): JSX.Element[] {
-    return list.map(function ({ label, url }, index) {
+function mapTabs(list: Tab[], active: number): JSX.Element[] {
+    return list.map(function ({ label }, index) {
         return (
             <NavbarItem
                 key={index}
                 label={label}
-                url={url}
+                index={index}
+                isActive={index === active}
             />
         )
     })
 }
 
-interface NavbarProps {}
+interface NavbarProps { }
 function Navbar(props: NavbarProps) {
 
     const { activeTab, tabList } = useSelector(selectNavbar)
 
     // TODO memoization
     const filteredTabs = filterOutDisabledTabs(tabList)
-    const tabs = mapTabs(filteredTabs)
+    const tabs = mapTabs(filteredTabs, activeTab)
 
     return (
         <Nav>

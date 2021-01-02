@@ -9,12 +9,10 @@ const Title = styled.h1`
 `
 
 export default function Home() {
-
-
   return (
     <Fragment>
       <Head>
-        <title>Home</title>
+        <title>Contact</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"
@@ -22,7 +20,7 @@ export default function Home() {
         />
       </Head>
 
-      <Title>Home</Title>
+      <Title>Contact</Title>
 
     </Fragment>
   )
