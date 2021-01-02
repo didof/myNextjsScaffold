@@ -25,6 +25,7 @@ function SideDraw() {
             w={width}
             animate={{ x: position }}
             transition={{ ease, duration }}
+            initial={false}
         >
             sidedraw
         </Section>

@@ -8,6 +8,9 @@ import { toggle } from '@/lib/slices/sideDrawSlice'
 // COMPONENTS
 import TopItemContract from './TopItemContract'
 
+// ANIMATION
+import { motion } from 'framer-motion'
+
 // STYLE
 import styles from 'styled-components'
 
@@ -20,13 +23,21 @@ function Hamburger(props: TopItemContract) {
     }
 
     return (
-        <Element onClick={handleToggleSideDraw}>
-            hamburger
-        </Element>
+        <Button
+            onClick={handleToggleSideDraw}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+        >
+        
+        </Button>
     )
 }
 
-const Element = styles.div`
+const Button = styles(motion.button)`
+    border-radius: 50%;
+    outline: none;
+    width: 30px;
+    height: 30px;
 
     cursor: pointer;
 `
