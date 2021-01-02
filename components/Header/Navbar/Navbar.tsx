@@ -50,7 +50,6 @@ function Navbar(props: NavbarProps) {
 
 const Nav = styles.nav`
     width: 100vw;
-    background-color: red;
 `
 
 const List = styles.ul`

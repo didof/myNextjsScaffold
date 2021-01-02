@@ -17,6 +17,7 @@ import styles from 'styled-components'
 function TopItems() {
     const { hamburger, icon, title, settings } = useSelector(selectTopItems)
 
+    // TODO fix HOC d.ts
     return (
         <Flexer>
             <Hamburger display={hamburger} />
@@ -28,7 +29,6 @@ function TopItems() {
 }
 
 const Flexer = styles.div`
-    background-color: blue;
     width: 100vw;
 
     padding: 10px;

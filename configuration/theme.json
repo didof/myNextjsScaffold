@@ -1,0 +1,12 @@
+{
+    "light": {
+        "body": {
+            "backgroundColor": "white"
+        }
+    },
+    "dark": {
+        "body": {
+            "backgroundColor": "black"
+        }
+    }
+}

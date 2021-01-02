@@ -4,22 +4,10 @@ import Header from './Header/Header'
 import SideDraw from './SideDraw/SideDraw'
 
 // STYLE
-import styles, { createGlobalStyle } from 'styled-components'
+import styles from 'styled-components'
+import GlobalStyle from '@/styles/GlobalStyle'
 
-const GlobalStyle = createGlobalStyle`
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    font-family: Open-sans, Helvetica, Sans-Serif;
-    box-sizing: border-box;
-  }
-`
-
-interface LayoutProps {
-    children: any
-}
-
-function Layout(props: LayoutProps) {
+function Layout(props) {
     return (
         <Screen>
             <GlobalStyle />
@@ -46,7 +34,6 @@ const Screen = styles.div`
 `
 
 const Page = styles.div`
-    background-color: purple;
     width: 100vw;
 
     display: flex;
