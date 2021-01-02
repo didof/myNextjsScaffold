@@ -1,21 +1,11 @@
-// REACT
-import React from 'react'
-
 // REDUX
 import { useDispatch } from 'react-redux'
-import { push } from '@/lib/slices/navbarSlice'
-import { ensureIsClose } from '@/lib/slices/sideDrawSlice'
 
-// NEXT
-import { useRouter } from 'next/router'
+// UTILS
+import { internalPushByIndex } from '@/utils/internalRouting'
 
 // STYLE
 import styles from 'styled-components'
-
-function handleClick(router, dispatch, index: number) {
-    dispatch(ensureIsClose())
-    dispatch(push({ newActiveTab: index }))
-}
 
 interface NavBarItemProps {
     label: string,
@@ -28,10 +18,9 @@ function NavbarItem(props: NavBarItemProps) {
     const Component = isActive ? ActiveItem : Item
 
     const dispatch = useDispatch()
-    const router = useRouter()
 
     return (
-        <Component onClick={handleClick.bind(null, router, dispatch, index)}>
+        <Component onClick={internalPushByIndex.bind(null, dispatch, index)}>
             {label}
         </Component>
     )

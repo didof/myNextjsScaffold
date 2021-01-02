@@ -33,11 +33,11 @@ function mapTabs(list: Tab[], active: number): JSX.Element[] {
 interface NavbarProps { }
 function Navbar(props: NavbarProps) {
 
-    const { activeTab, tabList } = useSelector(selectNavbar)
+    const { activeIndex, tabList } = useSelector(selectNavbar)
 
     // TODO memoization
     const filteredTabs = filterOutDisabledTabs(tabList)
-    const tabs = mapTabs(filteredTabs, activeTab)
+    const tabs = mapTabs(filteredTabs, activeIndex)
 
     return (
         <Nav>

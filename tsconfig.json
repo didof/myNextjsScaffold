@@ -23,7 +23,8 @@
       "@/lib/*": ["lib/*"],
       "@/HOC/*": ["HOC/*"],
       "@/styles/*": ["styles/*"],
-      "@/configuration/*": ["configuration/*"]
+      "@/configuration/*": ["configuration/*"],
+      "@/utils/*": ["utils/*"]
     }
   },
   "include": [
