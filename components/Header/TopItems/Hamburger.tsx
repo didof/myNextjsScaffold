@@ -1,21 +1,18 @@
-// REACT
-import { Fragment } from 'react'
+// HOC
+import withDisplay from '@/HOC/withDisplay'
 
 // REDUX
 import { useDispatch } from 'react-redux'
 import { toggle } from '@/lib/slices/sideDrawSlice'
 
-// COMPONENTS
+// CONTRACT
 import TopItemContract from './TopItemContract'
 
-// ANIMATION
-import { motion } from 'framer-motion'
-
 // STYLE
-import styles from 'styled-components'
+import { Button } from '@/styles/Button'
+
 
 function Hamburger(props: TopItemContract) {
-    if(!props.display) return <Fragment />
 
     const dispatch = useDispatch()
     function handleToggleSideDraw() {
@@ -33,13 +30,4 @@ function Hamburger(props: TopItemContract) {
     )
 }
 
-const Button = styles(motion.button)`
-    border-radius: 50%;
-    outline: none;
-    width: 30px;
-    height: 30px;
-
-    cursor: pointer;
-`
-
-export default Hamburger
+export default withDisplay(Hamburger)

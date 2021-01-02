@@ -1,9 +1,10 @@
-import { Fragment } from 'react'
-
+// CONTRACT
 import TopItemContract from './TopItemContract'
 
+// HOC
+import withDisplay from '@/HOC/withDisplay'
+
 function Title(props: TopItemContract) {
-    if(!props.display) return <Fragment />
     
     return (
         <div>
@@ -12,4 +13,4 @@ function Title(props: TopItemContract) {
     )
 }
 
-export default Title
+export default withDisplay(Title)

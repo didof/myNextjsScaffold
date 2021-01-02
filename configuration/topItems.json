@@ -1,6 +1,6 @@
 {
-    "hamburger": true,
+    "hamburger": false,
     "icon": false,
     "title": false,
-    "settings": false
+    "settings": true
 }
